@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - '3000:3000'
+    environment:
+      RAG_API_URL: http://rag-api:5000
+    volumes:
+      - ./backend/uploads:/app/uploads
+    depends_on:
+      - rag-api
+
+  frontend:
+    build: ./frontend
+    ports:
+      - '8080:80'
+    depends_on:
+      - backend
+
+  rag-api:
+    build: ./rag-api
+    ports:
+      - '5000:5000'
+    environment:
+      UPLOAD_DIR: /app/uploads
+    volumes:
+      - ./backend/uploads:/app/uploads

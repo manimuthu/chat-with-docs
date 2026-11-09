@@ -1,0 +1,24 @@
+# Node.js
+backend/node_modules/
+frontend/node_modules/
+*.log
+dist/
+
+# Python
+rag-api/__pycache__/
+rag-api/.venv/
+rag-api/venv/
+*.pyc
+
+# Environment
+.env
+*.env
+
+# React build
+frontend/build/
+
+# VSCode
+.vscode/
+
+# Docker
+**/.dockerignore
