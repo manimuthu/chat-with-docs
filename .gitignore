@@ -6,6 +6,7 @@ dist/
 
 # Python
 rag-api/__pycache__/
+rag-api/**/__pycache__/
 rag-api/.venv/
 rag-api/venv/
 *.pyc

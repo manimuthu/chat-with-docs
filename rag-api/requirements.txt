@@ -4,3 +4,5 @@ sentence-transformers
 faiss-cpu
 numpy
 pypdf
+openai>=1.0.0,<2.0.0
+python-dotenv

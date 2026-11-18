@@ -28,10 +28,13 @@ function QnaPage () {
       });
 
       const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || `Question failed (${res.status})`);
+      }
       setAnswer(data.answer);
       setSources(data.sources || []);
     } catch (err) {
-      setAnswer('Error contacting the server.');
+      setAnswer(err instanceof Error ? err.message : 'Error contacting the server.');
     } finally {
       setLoading(false);
     }
